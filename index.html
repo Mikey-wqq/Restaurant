@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        textcolor: '#101A24',
+                        buttonbg: '#ea6d27',
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav class="w-full h-32 bg-white flex items-center justify-between px-6 md:px-12 lg:px-16 ">
+        <!-- Logo -->
+        <div>
+            <img src="logo 1.png" alt="Company Logo" class="h-14 w-48 mb-5">
+        </div>
+
+        <!-- Menu (hidden on small screens) -->
+        <div class="hidden md:flex w-auto space-x-6">
+            <a href="#" class="text-textcolor text-base hover:underline">Menu</a>
+            <a href="#" class="text-textcolor text-base hover:underline">Events</a>
+            <a href="#" class="text-textcolor text-base hover:underline">Gallery</a>
+            <a href="#" class="text-textcolor text-base hover:underline">About</a>
+            <a href="#" class="text-textcolor text-base hover:underline">Contact</a>
+        </div>
+
+        <!-- Button -->
+        <div class="hidden md:block">
+            <button
+                class="h-[48px] w-[140px] bg-buttonbg text-white rounded-tl-3xl rounded-br-3xl rounded-tr-md rounded-bl-md shadow-lg hover:bg-orange-600">
+                Book a table
+            </button>
+        </div>
+
+        <!-- Hamburger Menu Icon (visible on small screens) -->
+        <div class="md:hidden">
+            <button id="menu-btn" class="focus:outline-none">
+                <svg class="w-8 h-8 text-textcolor" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+   
+    </nav>
+    <main class="grid grid-cols-1 sm:grid-cols-2 px-16 max-h-80">
+        <div class="left flex justify-center items-center flex-col">
+            <h1 class="w-[360px] h-[144px] text-[40px] font-bold">
+                We provide the best food for you
+            </h1>
+            <p class="w-[376px] h-[115px] text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque adipisci dicta impedit iste ratione earum
+                accusantium quae, autem.</p>
+
+            <div class="sm:me-[75px] flex items-center justify-center">
+                <button class="me-[20px] bg-textcolor text-white rounded-tl-3xl rounded-br-3xl rounded-tr-md rounded-bl-md hover:bg-black w-[120px] h-[54px]">Menu</button>
+                <button class="bg-orange-600 text-white rounded-tl-3xl rounded-br-3xl rounded-tr-md rounded-bl-md hover:bg-orange-900 w-[167px] h-[54px]">Book a table</button>
+            </div>
+            
+            <div class="mt-10 me-[95px] text-2xl">
+                <i class="fa-brands fa-facebook border-2 border-black p-2 rounded-full"></i>
+                <i class="fa-brands fa-instagram border-2 border-black p-2 rounded-full"></i>
+                <i class="fa-brands fa-x-twitter border-2 border-black p-2 rounded-full"></i>
+                
+            </div>
+
+        </div>
+
+
+        <div class="right">
+            <div class="image-container w-full flex items-center justify-center">
+                <img src="Restaurant website Landing Page Design (Community)/Mask group-1.png" alt="" class="sm:h-[420px] sm:w-[316px] w-[500px] shadow-3xl">
+            </div>
+
+        </div>
+    </main>
+
+     <!-- Mobile Menu (hidden by default) -->
+     <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+        <a href="#" class="block px-4 py-2 text-textcolor hover:bg-gray-100">Menu</a>
+        <a href="#" class="block px-4 py-2 text-textcolor hover:bg-gray-100">Events</a>
+        <a href="#" class="block px-4 py-2 text-textcolor hover:bg-gray-100">Gallery</a>
+        <a href="#" class="block px-4 py-2 text-textcolor hover:bg-gray-100">About</a>
+        <a href="#" class="block px-4 py-2 text-textcolor hover:bg-gray-100">Contact</a>
+        <button class="w-full px-4 py-2 mt-2 bg-buttonbg text-white rounded-md hover:bg-orange-600">
+            Book a table
+        </button>
+    </div>
+
+    <script>
+        // Toggle Mobile Menu
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+
+   
+</body>
+
+</html>
